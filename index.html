@@ -1,52 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
     <title>Julia Veiga</title>
-    <link rel="icon" href="https://jujuveiga.github.io/contato/1231.png" type="image/png">
-
+    <link rel="preload" href="https://media.bio.site/public/library/fonts/lato.ttf" as="font" type="font/woff2" crossorigin="anonymous" />
     <style>
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-display: swap;
+            src: url('https://media.bio.site/public/library/fonts/lato.ttf');
+        }
+        :root {
+            --primary-font: 'Lato', Arial, sans-serif;
+            --background-color: #010101;
+            --text-color: #FFFFFF;
+            --text-color-dim: rgba(255,255,255,0.5);
+            --button-background: #FFFFFF1A;
+            --button-text: #FFFFFF;
+            --button-text-dim: rgba(255,255,255,0.5);
+            --button-hover-background: #FFFFFF33;
+        }
+        * {
+            box-sizing: border-box;
+        }
         body {
-            background-image: url('https://jujuveiga.github.io/contato/1231.png');
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            height: 100vh;
+            background-color: var(--background-color);
+            font-family: var(--primary-font);
+            color: var(--text-color);
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            min-height: 100vh;
             align-items: center;
-            color: white;
             text-align: center;
+            padding: 40px 20px 60px;
         }
-
-        .button {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            width: 270px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            color: #fff;
-            display: inline-block;
+        header {
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 30px;
         }
-
-        #telegramButton {
-            background-color: #0088cc;
+        header .cover-photo {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: top center; /* centraliza topo da imagem */
+            border-radius: 12px;
+            margin-bottom: 16px;
+            filter: brightness(0.75);
         }
-
-        #privacyButton {
-            background-color: #ff8c00;
+        header h1 {
+            margin: 0 0 8px 0;
+            font-weight: 700;
+            font-size: 2.25rem;
+            letter-spacing: 0.06em;
         }
-
-        .pulse {
+        header p {
+            margin: 0;
+            color: var(--text-color-dim);
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        main {
+            max-width: 400px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        a.button-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background: var(--button-background);
+            color: var(--button-text);
+            padding: 14px 22px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.25s ease;
+            min-height: 56px;
+        }
+        a.button-link:hover {
+            background: var(--button-hover-background);
+        }
+        /* Remove as imagens das thumbnails */
+        a.button-link img.thumbnail {
+            display: none;
+        }
+        /* Para botão com animação pulse */
+        a.pulse {
             animation: pulse 1s infinite alternate;
         }
-
         @keyframes pulse {
             from {
                 transform: scale(1);
@@ -55,27 +104,31 @@
                 transform: scale(1.05);
             }
         }
+        footer {
+            margin-top: auto;
+            font-size: 0.8rem;
+            color: var(--text-color-dim);
+            user-select: none;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
-
-    <h2 style="margin-top: 90px;">Julia Veiga</h2>
-    <p>Você finalmente encontrou meu chat secreto 😈<br>Estou esperando por você 💖</p>
-
-    <button id="privacyButton" class="button" onclick="showPrivacyMessage()">Privacy</button>
-    <button id="telegramButton" class="button pulse" onclick="redirectToTelegram()">Telegram</button>
-    
-
-    <script>
-        function redirectToTelegram() {
-            // Link fixo para Telegram
-            window.location.href = 'https://apextry.com/go/hotboy';
-        }
-
-        function showPrivacyMessage() {
-            alert('Vagas encerradas. Tente novamente mais tarde!');
-        }
-    </script>
-
+    <header>
+        <img class="cover-photo" src="https://jujuveiga.github.io/contato/1231.png" alt="Cover photo Julia Veiga" />
+        <h1>Julia Veiga</h1>
+        <p>Você finalmente encontrou meu chat secreto 😈<br />Estou esperando por você 💖</p>
+    </header>
+    <main>
+       <!-- <a class="button-link" href="https://privacy.com.br/profile/Anacosta" target="_blank" rel="noopener noreferrer">
+            Privacy 50% Desconto🔥
+        </a> -->
+        <a class="button-link pulse" href="https://apextry.com/go/hotboy" target="_blank" rel="noopener noreferrer">
+            Telegram 50% Desconto 🔥
+        </a>
+    </main>
+    <footer>
+        <!-- Made with Unfold -->
+    </footer>
 </body>
 </html>
