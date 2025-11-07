@@ -46,6 +46,7 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
+            object-position: top center; /* centraliza topo da imagem */
             border-radius: 12px;
             margin-bottom: 16px;
             filter: brightness(0.75);
@@ -71,9 +72,9 @@
             gap: 16px;
         }
         a.button-link {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
             text-decoration: none;
             background: var(--button-background);
             color: var(--button-text);
@@ -82,16 +83,14 @@
             font-weight: 600;
             font-size: 1.1rem;
             transition: background-color 0.25s ease;
+            min-height: 56px;
         }
         a.button-link:hover {
             background: var(--button-hover-background);
         }
+        /* Remove as imagens das thumbnails */
         a.button-link img.thumbnail {
-            width: 56px;
-            height: 56px;
-            border-radius: 8px;
-            object-fit: cover;
-            flex-shrink: 0;
+            display: none;
         }
         /* Para botão com animação pulse */
         a.pulse {
@@ -116,19 +115,16 @@
 </head>
 <body>
     <header>
-        <!-- Cover photo no topo -->
         <img class="cover-photo" src="https://jujuveiga.github.io/contato/1231.png" alt="Cover photo Julia Veiga" />
         <h1>Julia Veiga</h1>
         <p>Você finalmente encontrou meu chat secreto 😈<br />Estou esperando por você 💖</p>
     </header>
     <main>
         <a class="button-link" href="https://privacy.com.br/profile/Anacosta" target="_blank" rel="noopener noreferrer">
-            <img class="thumbnail" src="https://media.bio.site/sites/5187404f-dcb7-4876-916c-811ac33cd3dd/3C7FDThA8YRH2pMH3WeEQ6.jpg" alt="Privacy 50% Desconto🔥" />
-            <span>Privacy 50% Desconto🔥</span>
+            Privacy 50% Desconto🔥
         </a>
         <a class="button-link pulse" href="https://apextry.com/go/hotboy" target="_blank" rel="noopener noreferrer">
-            <img class="thumbnail" src="https://media.bio.site/sites/5187404f-dcb7-4876-916c-811ac33cd3dd/k49UBYM28McHh7EnMwqvzH.jpg" alt="Telegram 50% Desconto🔥" />
-            <span>Telegram 50% Desconto 🔥</span>
+            Telegram 50% Desconto 🔥
         </a>
     </main>
     <footer>
