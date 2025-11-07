@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Julia Veiga</title>
     <link rel="preload" href="https://media.bio.site/public/library/fonts/lato.ttf" as="font" type="font/woff2" crossorigin="anonymous" />
     <style>
@@ -25,28 +25,31 @@
         * {
             box-sizing: border-box;
         }
-        body {
+        html, body {
             margin: 0;
+            padding: 0;
+            height: 100%;
             background-color: var(--background-color);
             font-family: var(--primary-font);
             color: var(--text-color);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            align-items: center;
             text-align: center;
-            padding: 40px 20px 60px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body {
+            display: block; /* remover flex para evitar problemas de altura em mobile */
+            padding: 40px 16px 60px; /* usar padding responsivo */
         }
         header {
-            max-width: 400px;
-            width: 100%;
-            margin-bottom: 30px;
+            max-width: 90vw;
+            width: 400px;
+            margin: 0 auto 30px auto;
         }
         header .cover-photo {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            object-position: top center; /* centraliza topo da imagem */
+            object-position: top center;
             border-radius: 12px;
             margin-bottom: 16px;
             filter: brightness(0.75);
@@ -56,6 +59,7 @@
             font-weight: 700;
             font-size: 2.25rem;
             letter-spacing: 0.06em;
+            word-wrap: break-word;
         }
         header p {
             margin: 0;
@@ -63,10 +67,12 @@
             font-weight: 400;
             font-size: 1rem;
             line-height: 1.4;
+            word-wrap: break-word;
         }
         main {
-            max-width: 400px;
-            width: 100%;
+            max-width: 90vw;
+            width: 400px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
             gap: 16px;
@@ -84,15 +90,17 @@
             font-size: 1.1rem;
             transition: background-color 0.25s ease;
             min-height: 56px;
+            width: 100%;
+            box-sizing: border-box;
+            word-wrap: break-word;
         }
         a.button-link:hover {
             background: var(--button-hover-background);
         }
-        /* Remove as imagens das thumbnails */
+        /* Remove imagens das thumbnails */
         a.button-link img.thumbnail {
             display: none;
         }
-        /* Para botão com animação pulse */
         a.pulse {
             animation: pulse 1s infinite alternate;
         }
@@ -105,11 +113,25 @@
             }
         }
         footer {
-            margin-top: auto;
+            margin-top: 40px;
             font-size: 0.8rem;
             color: var(--text-color-dim);
             user-select: none;
             font-style: italic;
+        }
+        /* Ajuste responsivo para telas muito pequenas */
+        @media (max-width: 400px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            header p {
+                font-size: 0.9rem;
+            }
+            a.button-link {
+                font-size: 1rem;
+                padding: 12px 16px;
+                min-height: 48px;
+            }
         }
     </style>
 </head>
@@ -120,9 +142,6 @@
         <p>Você finalmente encontrou meu chat secreto 😈<br />Estou esperando por você 💖</p>
     </header>
     <main>
-       <!-- <a class="button-link" href="https://privacy.com.br/profile/Anacosta" target="_blank" rel="noopener noreferrer">
-            Privacy 50% Desconto🔥
-        </a> -->
         <a class="button-link pulse" href="https://apextry.com/go/hotboy" target="_blank" rel="noopener noreferrer">
             Telegram 50% Desconto 🔥
         </a>
